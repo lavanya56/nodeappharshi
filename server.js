@@ -56,6 +56,6 @@ var connection = new Connection(config);
             );
 
 });
-app.listen('process.env.port|| process.env.PORT||4000', function(){
+app.listen(process.env.port|| process.env.PORT||4000, function(){
 console.log("Server is running at 4000");
 });
