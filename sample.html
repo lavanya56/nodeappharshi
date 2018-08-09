@@ -1,22 +1,37 @@
 <html>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 Username:<input type="text" name="username">
 Password:<input type="password" name = "pass">
-<input type="submit" value ="send" onclick="UserAction()">
-  <script type="text/JavaScript">
-   function UserAction() {
-   alert("hello")
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-         if (this.readyState == 4 && this.status == 200) {
-             alert(this.responseText);
-         }
-    };
-    xhttp.open("POST", "https://samplemilfunctionapp.azurewebsites.net/api/HttpTriggerJS1?code=QXDDxYEyD3DJACafIwfaC/o25ECZakO2OqsrdYzp6esY2M05l2rhOw==", true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send({"username":username,"pass":pass});
-}
-  
 
-  </script>
+<button type="submit" onclick="UserAction()">Search</button>
+<script>
+
+
+var apiurl = 'https://samplemilfunctionapp.azurewebsites.net/api/HttpTriggerJS1?code=QXDDxYEyD3DJACafIwfaC/o25ECZakO2OqsrdYzp6esY2M05l2rhOw==';
+    var a = new XMLHttpRequest();
+	
+	function UserAction() {
+    var Lead = {
+            "username": "Harshitha",
+			"pass":"miracle@123"
+        };
+        a.open('POST',apiurl,true),
+         $.ajax({
+             url: apiurl,
+             type: "POST",
+             ContentType: "application/json; charset=utf-8",
+             data: Lead,
+             crossOrigin: true,
+             dataType: "json",
+             complete: function (res) {
+                 alert("Data Added Successfully");
+             },
+             error: function (xhr) {
+                 alert("Error");
+             }
+         })
+
+    }
+    
+</script>
 </html>
