@@ -5,7 +5,7 @@ var Connection = require('tedious').Connection;
 var Request = require('tedious').Request;
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-// File render
+
 app.get('/',function(req,res){
      res.sendFile(__dirname+'/'+'sample.html');
 
