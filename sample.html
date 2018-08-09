@@ -2,6 +2,27 @@
 <form action ='https://samplemilfunctionapp.azurewebsites.net/api/HttpTriggerJS1?code=QXDDxYEyD3DJACafIwfaC/o25ECZakO2OqsrdYzp6esY2M05l2rhOw==' method ="POST">
 Username:<input type="text" name="username">
 Password:<input type="password" name = "pass">
-<input type="submit" value ="send">
+<input type="submit" value ="send" onclick="sample()">
 </form>
+  <script>
+    function sample(){
+    $.ajax(settings).done(function (response) {
+  console.log(response);
+});
+    }
+    var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://samplemilfunctionapp.azurewebsites.net/api/HttpTriggerJS1?code=QXDDxYEyD3DJACafIwfaC%2Fo25ECZakO2OqsrdYzp6esY2M05l2rhOw%3D%3D",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json"
+   
+  },
+  "processData": false,
+  "data": "{\"username\":\"harshitha\",\"pass\":\"miracle@123\"}"
+}
+    
+
+  </script>
 </html>
