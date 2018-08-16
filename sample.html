@@ -8,29 +8,30 @@ Password:<input type="password" name = "pass">
 
 
 var apiurl = 'https://miltestfunctionappsample.azurewebsites.net/api/HttpTriggerJS1?code=16XLQ7IU9BqLGOZ5a/YhkUZsEMXG9LdUjGQ/wbU3j2gAuapjzvmHbA==';
-    var a = new XMLHttpRequest();
+  //  var a = new XMLHttpRequest();
 	
 	function UserAction() {
-    var Lead = {
+		 var Lead = {
             "username": "Harshitha",
 			"pass":"miracle@123"
         };
-        a.open('POST',apiurl,true),
-         $.ajax({
-             url: apiurl,
-             type: "POST",
-             ContentType: "application/json; charset=utf-8",
-             data: Lead,
-             crossOrigin: true,
-             dataType: "json",
-             done: function (res) {
-                 alert("Data Added Successfully");
-             },
-             fail: function (xhr) {
-                 alert("Error");
-             }
-         })
-
+		$.ajax({
+    url: 'https://miltestfunctionappsample.azurewebsites.net/api/HttpTriggerJS1?code=16XLQ7IU9BqLGOZ5a/YhkUZsEMXG9LdUjGQ/wbU3j2gAuapjzvmHbA==',
+    type: 'POST',
+    contentType: 'application/json',
+    crossOrigin: true,
+    data: JSON.stringify(Lead ), 
+    success: function(){
+       alert('hello');
+    },
+    error: function(){
+        alert('error');
+    }
+});
+		
+		
+   
+        
     }
     
 </script>
