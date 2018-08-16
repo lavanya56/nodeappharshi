@@ -1,24 +1,37 @@
 <html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+Username:<input type="text" name="username">
+Password:<input type="password" name = "pass">
+
+<button type="submit" onclick="UserAction()">Search</button>
 <script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $.post("https://miltestfunctionappsample.azurewebsites.net/api/HttpTriggerJS1?code=16XLQ7IU9BqLGOZ5a/YhkUZsEMXG9LdUjGQ/wbU3j2gAuapjzvmHbA==",
-        {
-          user: "Donald Duck",
-          pass: "Duckburg"
-        },
-        function(data,status){
-            alert("Data Added succeefullt");
-        });
-    });
-});
+
+
+var apiurl = 'https://miltestfunctionappsample.azurewebsites.net/api/HttpTriggerJS1?code=16XLQ7IU9BqLGOZ5a/YhkUZsEMXG9LdUjGQ/wbU3j2gAuapjzvmHbA==';
+    var a = new XMLHttpRequest();
+	
+	function UserAction() {
+    var Lead = {
+            "username": "Harshitha",
+			"pass":"miracle@123"
+        };
+        a.open('POST',apiurl,true),
+         $.ajax({
+             url: apiurl,
+             type: "POST",
+             ContentType: "application/json; charset=utf-8",
+             data: Lead,
+             crossOrigin: true,
+             dataType: "json",
+             done: function (res) {
+                 alert("Data Added Successfully");
+             },
+             fail: function (xhr) {
+                 alert("Error");
+             }
+         })
+
+    }
+    
 </script>
-</head>
-<body>
-
-<button>Send</button>
-
-</body>
 </html>
