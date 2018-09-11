@@ -11,9 +11,11 @@ Password:<input type="password" name = "pass">
   //  var a = new XMLHttpRequest();
 	
 	function UserAction() {
+		console.log(document.getElementsByName("username")[0].value);
+		console.log(document.getElementsByName("pass")[0].value);		
 		 var Lead = {
-            "username": document.getElementsByName("username")[0].Value,
-			"pass":document.getElementsByName("pass")[0].Value
+            "username": document.getElementsByName("username")[0].value,
+			"pass":document.getElementsByName("pass")[0].value
         };
 		$.ajax({
     url: 'https://sampletestfunctionapp.azurewebsites.net/api/HttpTriggerJS1?code=T7j2QcxychgNrHfoWSTJP6EQXECd3IlAaJai1DimdxAkEZqoilFR/g==',
