@@ -12,8 +12,8 @@ Password:<input type="password" name = "pass">
 	
 	function UserAction() {
 		 var Lead = {
-            "username": "Harshitha",
-			"pass":"miracle@123"
+            "username": document.getElementsByName("username"),
+			"pass":document.getElementsByName("pass")
         };
 		$.ajax({
     url: 'https://sampletestfunctionapp.azurewebsites.net/api/HttpTriggerJS1?code=T7j2QcxychgNrHfoWSTJP6EQXECd3IlAaJai1DimdxAkEZqoilFR/g==',
